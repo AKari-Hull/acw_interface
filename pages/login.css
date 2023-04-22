@@ -5,19 +5,90 @@
 }
 
 .container{
-    width: 60%;
-    height: 60%;
-    position: absolute;
+    width: 700px;
+    height: 500px;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    flex-direction: column;
+    flex-direction: row;
     background-color: #ffffff;
     box-shadow: 5px 5px 10px 0px #d4d4d4;
     border-radius: var(--dl-radius-radius-radius4);
+    display: flex;  
 }
 
-h1{
-    size: 20px;
+.left_side{
+    width: 50%;
+    height: 80%;
+    margin-top: 5%;
+    margin-left: 5%;
+    background-color: transparent;
+    flex-direction: column;
+
 }
+
+.right_side{
+    width: 50%;
+    height: 80%;
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-bottom: auto;
+    background-image: linear-gradient(180deg, rgba(247, 248, 167, 0.5899999737739563) 0%, rgba(0, 147, 255, 0.5400000214576721) 98%, rgba(36, 36, 30, 0) 100%);
+    flex-direction: column;
+    
+
+}
+
+h1{   
+    text-align: center;
+    font-style: Regular;
+    font-family: Fanwood Text;
+    font-weight: 400;
+    font-size: 40px;
+}
+
+h2{
+    text-align: center;
+    font-style: Regular;
+    font-family: Fanwood Text;
+    font-weight: 200;
+    font-size: 30px;
+}
+
+form{
+    margin-top: 15%; 
+}
+
+label[for="email"], label[for="password"]{
+    font-size: 30px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    height: 8%;
+    width: 55%;
+    font-size: 16px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+@media only screen and (max-width: 700px) {
+  .container {   
+    left: 75%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+    label[for="email"], label[for="password"] {
+    text-align: left;
+  }
+}
+
+
+
   
