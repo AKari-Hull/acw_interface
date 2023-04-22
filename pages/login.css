@@ -40,6 +40,13 @@
 
 }
 
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 h1{   
     text-align: center;
     font-style: Regular;
@@ -70,11 +77,16 @@ input[type="text"], input[type="email"], input[type="password"] {
     font-size: 16px;
 }
 
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+button{ 
+    background-color: rgb(170, 203, 245);
+    width: 176px;
+    height: 35px;
+    font-family: Fanwood Text;
+    font-size: 18px;
+    border-width: 1px;
+    border-color: rgb(201, 201, 201)
+}
+
 
 
 @media only screen and (max-width: 700px) {
