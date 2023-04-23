@@ -25,6 +25,7 @@
     flex-direction: row;
     background-color: #d7d7d7;
     display: flex; 
+    
 }
 
 .button-container {
@@ -58,22 +59,27 @@
 .button-addLight{
     background-color: rgb(170, 203, 245);
     width: 70px;
-    height: 15px;
+    height: 20px;
     font-family: Fanwood Text;
-    font-size: 12px;
+    font-size: 13px;
     border-width: 1px;
     border-color: rgb(201, 201, 201);
     text-align: center;
-    margin-left: 3%;
+    margin-right: 5%; 
+    border-radius: 50%;
 }
 
 .model-container{
-    width: 100%;
+    width: 88%;
     height: 15%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-left: 5%;
     flex-direction: row;
-    background-color: #d73939;
+    background-color: #ffffff;
     display: flex; 
+    align-items: center;
 }
 
 h1{   
