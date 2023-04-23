@@ -4,42 +4,55 @@
     background-image: linear-gradient(180deg, rgba(247, 248, 167, 0.5899999737739563) 0%, rgba(0, 147, 255, 0.5400000214576721) 98%, rgba(36, 36, 30, 0) 100%);
 }
 
-.menu_container{
-    width: 150px;
-    height: 300px;
-    position: fixed;
-    flex-direction: row;
-    background-color: rgb(255, 255, 255);
-}
-
 .container{
     width: 700px;
-    height: 750px;
+    height: 650px;
+    max-width: 100%;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    flex-direction: row;
+    flex-direction: column;
     background-color: #ffffff;
     box-shadow: 5px 5px 10px 0px #d4d4d4;
-    border-radius: var(--dl-radius-radius-radius4);
-    display: flex;  
-    justify-content: center;
+    border-radius: var(--dl-radius-radius-radius4);  
 }
 
 .container_small{
     width: 80%;
-    height: 80%;
-    margin-top: 10%;
-    position: fixed;
+    height: 65%;
+    margin: auto;
     flex-direction: row;
     background-color: #d7d7d7;
     display: flex; 
 }
 
+.button-container {
+    margin-right: 10%;
+}
+
 h1{   
+    text-align: center;
     font-style: Regular;
     font-family: Fanwood Text;
     font-weight: 400;
     font-size: 30px;
+}
+
+h2{
+    font-style: Regular;
+    font-family: Fanwood Text;
+    font-weight: 300;
+    font-size: 20px;
+    margin-left: 10%;
+}
+
+button{ 
+    background-color: rgb(170, 203, 245);
+    width: 96px;
+    height: 35px;
+    font-family: Fanwood Text;
+    font-size: 18px;
+    border-width: 1px;
+    border-color: rgb(201, 201, 201)
 }
