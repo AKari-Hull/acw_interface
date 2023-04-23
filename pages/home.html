@@ -43,7 +43,7 @@
                 transform: 'translate(-50%, -50%)',
                 width: '90%',
                 height: '80%',
-                background: '#d7d7d7',               
+                background: '#d7d7d7',
                 'z-index': '2',
             });
             $('<img id="close-button" src="/images/icon_cancel.png">').appendTo($container).css({
@@ -100,9 +100,36 @@
 
                         container_model.append(button_addLight);
                         $('#inner-screen').append(container_model);
-                    }                
-                   
+                    }
                 }
+            }
+
+            function updateData(id, status, callback) {
+                $.ajax({
+                    url: "/server/update_data.php",
+                    type: 'POST',
+                    data: { id: id, status: status },
+                    success: function (response) {
+
+                        $.ajax({
+                            url: "/data/connect_data.csv",
+                            type: 'POST',
+                            data: response, 
+                            
+                            success: function () {
+                                if (typeof callback === 'function') {
+                                    callback(response); 
+                                }
+                            },
+                            error: function () {
+                                console.error('Failed to update CSV data');
+                            }
+                        });
+                    },
+                    error: function () {
+                        console.error('Failed to update data');
+                    }
+                });
             }
 
 
