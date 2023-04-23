@@ -75,17 +75,37 @@
                     var id = cells[0];
                     var connect_status = cells[1];
                     var model_name = cells[2].replace(/"/g, "");
+
                     if (connect_status === "FALSE") {
+
+                        var container_model = $('<div></div>').addClass('model-container');
+
                         var modelElement = $('<div></div>').addClass('text-modelname');
                         if (model_name.length > 40) {
                             model_name = model_name.slice(0, 40) + '...';
                         }
                         modelElement.text(model_name);
-                        $('#inner-screen').append(modelElement);
-                        
-                    }
+                        container_model.append(modelElement);
+
+                        var button_addLight = $('<button>"Connect"</button>').addClass('button-addLight');
+                        button_addLight.text('Connect');
+                        button_addLight.data('id', id);
+                        button_addLight.on('click', function () {
+                            var id = $(this).data('id');
+                            $(this).text('Connected');
+                            $(this).off('click');
+                            connect_status = "TRUE";
+                            updateData(id, connect_status);
+                        });
+
+                        container_model.append(button_addLight);
+                        $('#inner-screen').append(container_model);
+                    }                
+                   
                 }
             }
+
+
         });
     });
 </script>
