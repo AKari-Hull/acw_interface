@@ -21,47 +21,106 @@
     $(document).ready(function () {
 
         $.ajax({
-                type: "GET",
-                url: "/SmartLightProject/data/light_name.csv",
-                dataType: "text",
-                success: function (data) {
-                    processName(data);
-                }
-            });
-
-            function processName(data){
-                var lines = data.split(/\r\n|\n/);
-                for (var i = 1; i < lines.length; i++) {
-                    var cells = lines[i].split(",");
-                    var id = cells[0];
-                    var name = cells[1];
-                    var status = cells[2].replace(/"/g, "");
-
-                    if (name !== "FALSE") {
-
-                        var container_name = $('<div></div>').addClass('name-container');
-
-                        var modelElement = $('<div></div>').addClass('text-name');                     
-                        modelElement.text(name);
-
-                        var sun = $()
-
-                        if(status === "sun"){
-                            container_name.append('<img src="/SmartLightProject/images/icon_sun.png" alt="no image" width="10%" height="90%">')
-                        }
-                        else{
-                            container_name.append('<img src="/SmartLightProject/images/icon_moon.png" alt="no image" width="10%" height="90%">')
-                        }
-
-                        container_name.append(modelElement);
-                        $('<img src="/SmartLightProject/images/icon_adjustment.png" alt="no image" width="10%" height="90%">').appendTo(container_name);
-                        $('<img src="/SmartLightProject/images/icon_menu.png" alt="no image" width="10%" height="90%">').appendTo(container_name);
-
-                        $('#container_small').append(container_name);
-                    }
-                }
-
+            type: "GET",
+            url: "/SmartLightProject/data/light_name.csv",
+            dataType: "text",
+            success: function (data) {
+                processName(data);
             }
+        });
+
+        function processName(data) {
+            var lines = data.split(/\r\n|\n/);
+            for (var i = 1; i < lines.length; i++) {
+                var cells = lines[i].split(",");
+                var id = cells[0];
+                var name = cells[1];
+                var status = cells[2].replace(/"/g, "");
+
+                if (name !== "FALSE") {
+
+                    var container_name = $('<div></div>').addClass('name-container');
+
+                    var modelElement = $('<div></div>').addClass('text-name');
+                    modelElement.text(name);
+
+                    var sun = $()
+
+                    if (status === "sun") {
+                        container_name.append('<img src="/SmartLightProject/images/icon_sun.png" alt="no image" width="10%" height="90%">')
+                    }
+                    else {
+                        container_name.append('<img src="/SmartLightProject/images/icon_moon.png" alt="no image" width="10%" height="90%">')
+                    }
+
+                    container_name.append(modelElement);
+                    $('<img src="/SmartLightProject/images/icon_adjustment.png" alt="no image" width="10%" height="90%">').appendTo(container_name).click(function () {
+                        $('<div>').appendTo('body').addClass('overlay');
+                        var $container = $('<div>Adjustment</div>').appendTo('body').attr('id', 'connectable-lights').css({
+                            position: 'fixed',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            width: '400px',
+                            height: '400px',
+                            background: '#fff',
+                            border: '1px solid #808080',
+                            'border-radius': '5px',
+                            'text-align': 'center',
+                            'line-height': '50px',
+                            'font-size': '24px',
+                            'z-index': '1000'
+                        });
+                        $('<div id="inner-screen"></div>').appendTo($container).css({
+                            position: 'absolute',
+                            top: '55%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            width: '90%',
+                            height: '80%',
+                            background: '#d7d7d7',
+                            'z-index': '2',
+                        });
+                        $('<label for="volume">Brightness:</label><br>').appendTo('#inner-screen').css({
+                            'font-size': '16px',
+                        });
+                        $('<img src="/SmartLightProject/images/icon_moon.png" alt="no image" width="5%" height="8%">').appendTo('#inner-screen');
+                        $('<input type="range" id="volume" name="volume" min="0" max="100" value="50">').appendTo('#inner-screen');
+                        $('<img src="/SmartLightProject/images/icon_sun.png" alt="no image" width="5%" height="8%"><br><br>').appendTo('#inner-screen');
+
+                        $('<label for="color">Colour:</label><br>').appendTo('#inner-screen').css({
+                            'font-size': '16px',
+                        });
+                        $('<input type="color" value="#4251f5" /><br>').appendTo('#inner-screen');
+                        $('<button>Auto Set</button>').appendTo('#inner-screen');
+                        
+
+                        
+
+
+
+
+
+                        $('<img id="close-button" src="/SmartLightProject/images/icon_cancel.png">').appendTo($container).css({
+                            position: 'absolute',
+                            top: '5px',
+                            right: '5px',
+                            width: '20px',
+                            height: '20px',
+                            cursor: 'pointer',
+                            'z-index': '2',
+                        }).click(function () {
+                            $('.overlay').remove();
+                            $container.remove();
+                        });
+                    });
+                    $('<img src="/SmartLightProject/images/icon_menu.png" alt="no image" width="10%" height="90%">').appendTo(container_name);
+
+                    $('#container_small').append(container_name);
+                }
+            }
+
+        }
 
         $('#small-screen-button').click(function () {
             $('<div>').appendTo('body').addClass('overlay');
@@ -137,7 +196,7 @@
                         button_addLight.on('click', function () {
                             var id = $(this).data('id');
                             $(this).text('Connected');
-                            $(this).off('click');                           
+                            $(this).off('click');
                         });
 
                         container_model.append(button_addLight);
