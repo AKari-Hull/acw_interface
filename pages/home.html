@@ -20,7 +20,8 @@
 <script>
 $(document).ready(function() {
   $('#small-screen-button').click(function() {
-    $('<div id="connectable-lights">Connectable Lights</div>').appendTo('body').css({
+    $('<div>').appendTo('body').addClass('overlay');
+    var $container = $('<div>Connectable Lights</div>').appendTo('body').attr('id', 'connectable-lights').css({
       position: 'fixed',
       top: '50%',
       left: '50%',
@@ -32,9 +33,10 @@ $(document).ready(function() {
       'border-radius': '5px',
       'text-align': 'center',
       'line-height': '50px',
-      'font-size': '24px'
+      'font-size': '24px',
+      'z-index': '1000'
     });
-    $('<div id="inner-screen"></div>').appendTo('#connectable-lights').css({
+    $('<div id="inner-screen"></div>').appendTo($container).css({
       position: 'absolute',
       top: '55%',
       left: '50%',
@@ -44,13 +46,17 @@ $(document).ready(function() {
       background: '#d7d7d7',
       'z-index': '2'
     });
-    $('<div id="close-button">X</div>').appendTo('#connectable-lights').css({
-      position: 'absolute',
-      top: '10px',
-      right: '10px',
-      cursor: 'pointer'
+    $('<img id="close-button" src="/images/icon_cancel.png">').appendTo($container).css({
+        position: 'absolute',
+        top: '5px',
+        right: '5px',
+        width: '20px',
+        height: '20px',
+        cursor: 'pointer',
+        'z-index': '2',
     }).click(function() {
-      $('#connectable-lights').remove();
+        $('.overlay').remove();
+        $container.remove();
     });
   });
 });
