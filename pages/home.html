@@ -10,10 +10,40 @@
                 
             </div>  
             <div class="button-container" style="text-align: right;">
-                <a href="home_addLight.html">
-                    <br><button>Add Light</button>
-                </a>
+                <br><button id="small-screen-button">Add Light</button>
             </div>       
         </div>           
     </div> 
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#small-screen-button').click(function() {
+    $('<div id="connectable-lights">Connectable Lights</div>').appendTo('body').css({
+      position: 'fixed',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      width: '400px',
+      height: '400px',
+      background: '#fff',
+      border: '1px solid #808080',
+      'border-radius': '5px',
+      'text-align': 'center',
+      'line-height': '50px',
+      'font-size': '24px'
+    });
+    $('<div id="inner-screen"></div>').appendTo('#connectable-lights').css({
+      position: 'absolute',
+      top: '55%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      width: '85%',
+      height: '80%',
+      background: '#d7d7d7',
+      'z-index': '2'
+    });
+  });
+});
+</script>
