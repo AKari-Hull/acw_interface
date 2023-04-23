@@ -39,7 +39,21 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
-  }
+}
+
+.text-modelname{
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid #000;
+    padding-left: 1%;
+    text-align: left;
+    margin-bottom: 1%;   
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 2%;
+}
 
 h1{   
     text-align: center;
