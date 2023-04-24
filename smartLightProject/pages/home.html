@@ -93,12 +93,11 @@
                         });
                         $('<input type="color" value="#4251f5" /><br>').appendTo('#inner-screen');
                         $('<button>Auto Set</button>').appendTo('#inner-screen');
-                        
-
-                        
-
-
-
+                        var switchArea = $('<div>').addClass('switchArea');
+                        switchArea.append('<input type="checkbox" id="switch1">');
+                        switchArea.append('<label for="switch1"><span></span></label>');
+                        switchArea.append('<div id="swImg"></div>');
+                        $('#inner-screen').append(switchArea);
 
 
                         $('<img id="close-button" src="/SmartLightProject/images/icon_cancel.png">').appendTo($container).css({

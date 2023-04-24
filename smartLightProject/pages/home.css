@@ -1,31 +1,31 @@
-.background{
+.background {
     width: 100%;
     height: 100vh;
     background-image: linear-gradient(180deg, rgba(247, 248, 167, 0.5899999737739563) 0%, rgba(0, 147, 255, 0.5400000214576721) 98%, rgba(36, 36, 30, 0) 100%);
 }
 
-.container{
+.container {
     width: 700px;
     height: 650px;
     max-width: 100%;
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     flex-direction: column;
     background-color: #ffffff;
     box-shadow: 5px 5px 10px 0px #d4d4d4;
-    border-radius: var(--dl-radius-radius-radius4);  
+    border-radius: var(--dl-radius-radius-radius4);
 }
 
-.container_small{
+.container_small {
     width: 80%;
     height: 65%;
     margin: auto;
     flex-direction: column;
     background-color: #d7d7d7;
-    display: flex; 
-    
+    display: flex;
+
 }
 
 .button-container {
@@ -42,21 +42,21 @@
     z-index: 1;
 }
 
-.text-modelname{
+.text-modelname {
     font-size: 14px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     padding-left: 1%;
     text-align: left;
-    margin-bottom: 1%;   
+    margin-bottom: 1%;
     margin-left: 3%;
     margin-right: 3%;
     margin-top: 1%;
     width: 70%;
 }
 
-.button-addLight{
+.button-addLight {
     background-color: rgb(170, 203, 245);
     width: 70px;
     height: 20px;
@@ -65,11 +65,11 @@
     border-width: 1px;
     border-color: rgb(201, 201, 201);
     text-align: center;
-    margin-right: 5%; 
+    margin-right: 5%;
     border-radius: 50%;
 }
 
-.model-container{
+.model-container {
     width: 88%;
     height: 15%;
     margin-bottom: 2%;
@@ -78,11 +78,11 @@
     margin-left: 5%;
     flex-direction: row;
     background-color: #ffffff;
-    display: flex; 
+    display: flex;
     align-items: center;
 }
 
-.name-container{
+.name-container {
     width: 88%;
     height: 10%;
     margin-bottom: 1%;
@@ -91,33 +91,89 @@
     margin-left: 5%;
     flex-direction: row;
     background-color: #ffffff;
-    display: flex; 
+    display: flex;
     align-items: center;
 }
 
-.text-name{
+.text-name {
     font-size: 18px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     padding-left: 1%;
     text-align: left;
-    margin-bottom: 1%;   
+    margin-bottom: 1%;
     margin-left: 6%;
     margin-right: 3%;
     margin-top: 1%;
     width: 70%;
 }
 
+.switchArea {
+    line-height: 60px;
+    letter-spacing: 0;
+    text-align: center;
+    font-size: 27px;
+    position: relative;
+    margin-left: 70%;
+    width: 150px;
+    background: #fff;
+}
+
+.switchArea input[type="checkbox"] {
+    display: none;
+}
+
+.switchArea label {
+    display: block;
+    box-sizing: border-box;
+    height: 50px;
+    border: 2px solid #999999;
+    border-radius: 25px;
+}
+
+.switchArea input[type="checkbox"]:checked+label {
+    border-color: #78bd78;
+}
+
+
+.switchArea label span:after {
+    content: "OFF";
+    padding: 0 0 0 36px;
+    color: #999999;
+}
+
+.switchArea input[type="checkbox"]:checked+label span:after {
+    content: "ON";
+    padding: 0 36px 0 0;
+    color: #78bd78;
+}
+
+.switchArea #swImg {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    background: #999999;
+    top: 4px;
+    left: 4px;
+    border-radius: 26px;
+    transition: .2s;
+}
+
+.switchArea input[type="checkbox"]:checked~#swImg {
+    transform: translateX(90px);
+    background: #78bd78;
+}
+
 label {
     margin-top: 30%;
 }
-  
+
 input[type="range"] {
     width: 50%;
 }
 
-h1{   
+h1 {
     text-align: center;
     font-style: Regular;
     font-family: Fanwood Text;
@@ -125,7 +181,7 @@ h1{
     font-size: 30px;
 }
 
-h2{
+h2 {
     font-style: Regular;
     font-family: Fanwood Text;
     font-weight: 300;
@@ -133,7 +189,7 @@ h2{
     margin-left: 10%;
 }
 
-button{ 
+button {
     background-color: rgb(170, 203, 245);
     width: 96px;
     height: 35px;
