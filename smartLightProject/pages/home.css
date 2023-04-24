@@ -110,13 +110,16 @@
 }
 
 .switchArea {
-    line-height: 50px;
+    line-height: 39px;
     letter-spacing: 0;
     text-align: center;
     font-size: 15px;
-    position: relative;  
-    width: 100px;
+    position: absolute;  
+    width: 90px;
     background: #fff;
+    margin-left: 70%;
+    margin-top: 10%;
+    
 }
 
 .switchArea input[type="checkbox"] {
@@ -126,42 +129,53 @@
 .switchArea label {
     display: block;
     box-sizing: border-box;
-    height: 50px;
-    border: 2px solid #999999;
+    height: 38px;
+    border: 2px solid #89c4ff;
     border-radius: 25px;
 }
 
 .switchArea input[type="checkbox"]:checked+label {
-    border-color: #78bd78;
+    border-color: #999999;
 }
 
 
 .switchArea label span:after {
+    content: "ON";
+    padding: 0 30px 0 0;
+    color: #89c4ff;
+}
+
+.switchArea input[type="checkbox"]:checked+label span:after {
     content: "OFF";
     padding: 0 0 0 36px;
     color: #999999;
 }
 
-.switchArea input[type="checkbox"]:checked+label span:after {
-    content: "ON";
-    padding: 0 30px 0 0;
-    color: #78bd78;
-}
-
 .switchArea #swImg {
     position: absolute;
-    width: 32px;
-    height: 32px;
-    background: #999999;
-    top: 40px;
-    left: 4px;
+    width: 28px;
+    height: 28px;
+    background: #89c4ff;
+    top: 32px;
+    right: 4px;
     border-radius: 26px;
     transition: .2s;
 }
 
 .switchArea input[type="checkbox"]:checked~#swImg {
-    transform: translateX(50px);
-    background: #78bd78;
+    transform: translateX(-50px);
+    background: #999999;
+}
+
+.button-auto{
+    background-color: #ffffff;
+    width: 120px;
+    height: 35px;
+    font-family: Fanwood Text;
+    font-size: 16px;
+    border-width: 2px;
+    border-radius: 15px;
+    border-color: #89c4ff;
 }
 
 label {

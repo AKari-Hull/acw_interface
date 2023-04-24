@@ -78,8 +78,11 @@
                             transform: 'translate(-50%, -50%)',
                             width: '90%',
                             height: '65%',
-                            background: '#d7d7d7',
-                            'z-index': '2',
+                            background: '#fff',
+                            'z-index': '2',    
+                            border: '1px solid  #89c4ff',
+                            'border-radius': '5px',                        
+                            
                         });
                         $('<div id="button-screen"></div>').appendTo($container).css({
                             position: 'fixed',
@@ -89,31 +92,32 @@
                             transform: 'translate(-50%, -50%)',
                             width: '90%',
                             height: '20%',
-                            background: '#000000',
+                            background: 'tarnsparent',
                             'z-index': '2',
                             display: 'flex',
                             'flex-wrap': 'wrap',
-                            'justify-content': 'center',
+                            'justify-content': 'left',
                             'align-items': 'center'
                         });
                         $('<label for="volume">Brightness:</label><br>').appendTo('#inner-screen').css({
-                            'font-size': '16px',
+                            'font-size': '18px',
                         });
                         $('<img src="/SmartLightProject/images/icon_moon.png" alt="no image" width="5%" height="8%">').appendTo('#inner-screen');
                         $('<input type="range" id="volume" name="volume" min="0" max="100" value="50">').appendTo('#inner-screen');
                         $('<img src="/SmartLightProject/images/icon_sun.png" alt="no image" width="5%" height="8%"><br>').appendTo('#inner-screen');
                         $('<label for="color">Colour:</label><br>').appendTo('#inner-screen').css({
-                            'font-size': '16px',
+                            'font-size': '18px',
                         });
                         $('<input type="color" value="#4251f5" /><br>').appendTo('#inner-screen');
-                        $('<button>Auto Setting</button>').appendTo('#button-screen').click(function(){
-                            
-                        });
+                        $('<button>Auto Setting</button>').appendTo('#button-screen').addClass('button-auto');
                         var switchArea = $('<div>').addClass('switchArea');
                         switchArea.append('<input type="checkbox" id="switch1">');
                         switchArea.append('<label for="switch1"><span></span></label>');
-                        switchArea.append('<div id="swImg"></div>');
-                        $('#button-screen').append(switchArea);
+                        switchArea.append('<div id="swImg"></div>').click(function() {     
+                            $("#volume").val(0);
+                            $("input[type='color']").val("#000000");
+                        });;
+                        $('#inner-screen').append(switchArea);
 
 
                         $('<img id="close-button" src="/SmartLightProject/images/icon_cancel.png">').appendTo($container).css({
@@ -223,5 +227,6 @@
 
 
         });
+
     });
 </script>
