@@ -4,7 +4,7 @@
     <div class="background">
         <div class="container">
             <h1>All Lights</h1>
-            <h2>Light used :</h2>
+            <h2>Light used : 2</h2>
 
             <div class="container_small" id="container_small">
 
@@ -44,14 +44,14 @@
                     var modelElement = $('<div></div>').addClass('text-name');
                     modelElement.text(name);
 
-                    var sun = $()
-
                     if (status === "sun") {
-                        container_name.append('<img src="/SmartLightProject/images/icon_sun.png" alt="no image" width="10%" height="90%">')
+                        var sun = $('<img src="/SmartLightProject/images/icon_sun.png" alt="no image" width="10%" height="90%">').appendTo(container_name);
+                        var moon = $('<img src="/SmartLightProject/images/icon_sun.png" alt="no image" width="10%" height="90%">').appendTo(container_name).hide();
                     }
                     else {
-                        container_name.append('<img src="/SmartLightProject/images/icon_moon.png" alt="no image" width="10%" height="90%">')
+                        var sun = $('<img src="/SmartLightProject/images/icon_moon.png" alt="no image" width="10%" height="90%">').appendTo(container_name);
                     }
+
 
                     container_name.append(modelElement);
                     $('<img src="/SmartLightProject/images/icon_adjustment.png" alt="no image" width="10%" height="90%">').appendTo(container_name).click(function () {
@@ -182,6 +182,7 @@
                             switchArea.append('<div id="swImg"></div>').click(function () {
                                 $("input[type='range']").val(0);
                                 $("input[type='color']").val("#000000");
+
 
                             });;
                             $('#inner-screen2').append(switchArea);
@@ -423,6 +424,8 @@
                                 switchArea.append('<div id="swImg"></div>').click(function () {
                                     $("#volume").val(0);
                                     $("input[type='color']").val("#000000");
+                                    modelImage.hide();
+                                    inputImage.show();
 
                                 });;
                                 $('#inner-screen').append(switchArea);
@@ -447,17 +450,18 @@
                                 $('.dropdown.show').removeClass('show');
                             }
 
-                            function hideForm() {        
+                            function hideForm() {
                                 inputElement.css({
                                     border: 'none',
                                 });
                             }
 
+
                             var dropdown = $('<div class="dropdown"></div>');
                             var dropdown_content = $('<div class="dropdown-content"></div>');
 
-                            
-                            
+
+
                             var rename_option = $('<a href="#">Rename</a>');
                             rename_option.on('click', function () {
                                 modelElement.hide();
@@ -524,7 +528,6 @@
                             $('.rename_option').on('click', function (e) {
                                 e.stopPropagation();
                             });
-
 
                         });
 

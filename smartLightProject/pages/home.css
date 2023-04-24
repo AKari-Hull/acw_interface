@@ -5,7 +5,7 @@
 }
 
 .container {
-    width: 660px;
+    width: 620px;
     height: 650px;
     max-width: 100%;
     position: fixed;
@@ -20,7 +20,7 @@
 
 .container_small {
     width: 80%;
-    height: 65%;
+    height: 70%;
     margin: auto;
     flex-direction: column;
     background-color: #d7d7d7;
@@ -85,8 +85,8 @@
 .name-container {
     width: 88%;
     height: 10%;
-    margin-bottom: 1%;
-    margin-top: 1%;
+    margin-bottom: 0.3%;
+    margin-top: 2%;
     margin-left: 5%;
     margin-left: 5%;
     flex-direction: row;
