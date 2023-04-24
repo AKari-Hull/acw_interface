@@ -57,16 +57,16 @@
 }
 
 .button-addLight {
-    background-color: rgb(170, 203, 245);
+    background-color: rgb(255, 255, 255);
     width: 70px;
     height: 20px;
     font-family: Fanwood Text;
     font-size: 13px;
     border-width: 1px;
-    border-color: rgb(201, 201, 201);
+    border-color: #89c4ff;
     text-align: center;
     margin-right: 5%;
-    border-radius: 50%;
+    border-radius: 5%;
 }
 
 .model-container {
@@ -114,12 +114,12 @@
     letter-spacing: 0;
     text-align: center;
     font-size: 15px;
-    position: absolute;  
+    position: absolute;
     width: 90px;
     background: #fff;
     margin-left: 70%;
     margin-top: 10%;
-    
+
 }
 
 .switchArea input[type="checkbox"] {
@@ -167,7 +167,7 @@
     background: #999999;
 }
 
-.button-auto{
+.button-auto {
     background-color: #ffffff;
     width: 120px;
     height: 35px;
@@ -176,6 +176,52 @@
     border-width: 2px;
     border-radius: 15px;
     border-color: #89c4ff;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+}
+
+.dropdown.show .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.rename-input{
+    background-color: #ffffff;
+    width: 80%;
+    height: 100%;
+    margin-left: 7%;
+    font-size: 18px;
+   
+    font-family: Fanwood Text;
+}
+
+.button_delete{
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 0%;
 }
 
 label {
@@ -203,11 +249,11 @@ h2 {
 }
 
 button {
-    background-color: rgb(170, 203, 245);
+    background-color: #ffffff;
     width: 96px;
     height: 35px;
     font-family: Fanwood Text;
     font-size: 18px;
     border-width: 1px;
-    border-color: rgb(201, 201, 201)
+    border-color: #89c4ff;
 }

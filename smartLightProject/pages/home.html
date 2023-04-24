@@ -182,6 +182,7 @@
                             switchArea.append('<div id="swImg"></div>').click(function () {
                                 $("input[type='range']").val(0);
                                 $("input[type='color']").val("#000000");
+
                             });;
                             $('#inner-screen2').append(switchArea);
 
@@ -203,7 +204,7 @@
 
                                 $('<div>').appendTo($container).addClass('overlay');
                                 $('<div>').appendTo($container2).addClass('overlay');
-                                $('<div>').appendTo('#button-screen').addClass('overlay');                                                                                          
+                                $('<div>').appendTo('#button-screen').addClass('overlay');
 
                                 var $container3 = $('<div>').appendTo('body').attr('id', 'connectable-lights').css({
                                     position: 'fixed',
@@ -238,6 +239,7 @@
                         switchArea.append('<div id="swImg"></div>').click(function () {
                             $("#volume").val(0);
                             $("input[type='color']").val("#000000");
+
                         });;
                         $('#inner-screen').append(switchArea);
 
@@ -341,14 +343,198 @@
                             var id = $(this).data('id');
                             $(this).text('Connected');
                             $(this).off('click');
+                            setTimeout(function () {
+                                container_model.remove();
+                            }, 2000);
+
+
+                            var cells = lines[8].split(",");
+                            var id = cells[0];
+                            var connect_status = cells[1];
+                            var model_name = cells[2].replace(/"/g, "");
+                            var container_name = $('<div></div>').addClass('name-container').appendTo('#container_small');
+                            var modelElement = $('<div></div>').addClass('text-name');
+                            if (model_name.length > 30) {
+                                model_name = model_name.slice(0, 30) + '...';
+                            }
+                            modelElement.text(model_name);
+                            container_name.append('<img src="/SmartLightProject/images/icon_moon.png" alt="no image" width="10%" height="90%">')
+                            container_name.append(modelElement);
+                            var inputElement = $('<input type="text">').addClass('rename-input').appendTo(container_name).hide();
+                            $('<img src="/SmartLightProject/images/icon_adjustment.png" alt="no image" width="10%" height="90%">').appendTo(container_name).click(function () {
+                                $('<div>').appendTo('body').addClass('overlay');
+                                var $container = $('<div>Adjustment</div>').appendTo('body').attr('id', 'connectable-lights').css({
+                                    position: 'fixed',
+                                    top: '50%',
+                                    left: '50%',
+                                    transform: 'translate(-50%, -50%)',
+                                    width: '400px',
+                                    height: '400px',
+                                    background: '#fff',
+                                    border: '1px solid #808080',
+                                    'border-radius': '5px',
+                                    'text-align': 'center',
+                                    'line-height': '50px',
+                                    'font-size': '24px',
+                                    'z-index': '1000'
+                                });
+                                $('<div id="inner-screen"></div>').appendTo($container).css({
+                                    position: 'absolute',
+                                    top: '45%',
+                                    left: '50%',
+                                    transform: 'translate(-50%, -50%)',
+                                    width: '90%',
+                                    height: '65%',
+                                    background: '#fff',
+                                    'z-index': '2',
+                                    border: '1px solid  #89c4ff',
+                                    'border-radius': '5px',
+
+                                });
+                                $('<div id="button-screen"></div>').appendTo($container).css({
+                                    position: 'fixed',
+                                    display: 'flex',
+                                    top: '85%',
+                                    left: '50%',
+                                    transform: 'translate(-50%, -50%)',
+                                    width: '90%',
+                                    height: '20%',
+                                    background: 'tarnsparent',
+                                    'z-index': '2',
+                                    display: 'flex',
+                                    'flex-wrap': 'wrap',
+                                    'justify-content': 'left',
+                                    'align-items': 'center'
+                                });
+                                $('<label for="volume">Brightness:</label><br>').appendTo('#inner-screen').css({
+                                    'font-size': '18px',
+                                });
+                                $('<img src="/SmartLightProject/images/icon_moon.png" alt="no image" width="5%" height="8%">').appendTo('#inner-screen');
+                                $('<input type="range" id="volume" name="volume" min="0" max="100" value="50">').appendTo('#inner-screen');
+                                $('<img src="/SmartLightProject/images/icon_sun.png" alt="no image" width="5%" height="8%"><br>').appendTo('#inner-screen');
+                                $('<label for="color">Colour:</label><br>').appendTo('#inner-screen').css({
+                                    'font-size': '18px',
+                                });
+                                $('<input type="color" value="#4251f5" /><br>').appendTo('#inner-screen');
+                                $('<button>Auto Setting</button>').appendTo('#button-screen').addClass('button-auto');
+                                var switchArea = $('<div>').addClass('switchArea');
+                                switchArea.append('<input type="checkbox" id="switch1">');
+                                switchArea.append('<label for="switch1"><span></span></label>');
+                                switchArea.append('<div id="swImg"></div>').click(function () {
+                                    $("#volume").val(0);
+                                    $("input[type='color']").val("#000000");
+
+                                });;
+                                $('#inner-screen').append(switchArea);
+
+
+                                $('<img id="close-button" src="/SmartLightProject/images/icon_cancel.png">').appendTo($container).css({
+                                    position: 'absolute',
+                                    top: '5px',
+                                    right: '5px',
+                                    width: '20px',
+                                    height: '20px',
+                                    cursor: 'pointer',
+                                    'z-index': '2',
+                                }).click(function () {
+                                    $('.overlay').remove();
+                                    $container.remove();
+                                });
+                            });
+
+
+                            function hideDropdown() {
+                                $('.dropdown.show').removeClass('show');
+                            }
+
+                            function hideForm() {        
+                                inputElement.css({
+                                    border: 'none',
+                                });
+                            }
+
+                            var dropdown = $('<div class="dropdown"></div>');
+                            var dropdown_content = $('<div class="dropdown-content"></div>');
+
+                            
+                            
+                            var rename_option = $('<a href="#">Rename</a>');
+                            rename_option.on('click', function () {
+                                modelElement.hide();
+                                inputElement.show();
+                                inputElement.val(model_name);
+                                e.stopPropagation();
+                            });
+
+
+                            var delete_option = $('<a href="#">Delete</a>');
+                            delete_option.on('click', function () {
+
+                                $('<div>').appendTo('body').addClass('overlay');
+                                var $container_ask = $('<div>').appendTo('body').css({
+                                    position: 'fixed',
+                                    top: '50%',
+                                    left: '50%',
+                                    transform: 'translate(-50%, -50%)',
+                                    width: '400px',
+                                    height: '100px',
+                                    background: '#fff',
+                                    border: '1px solid #808080',
+                                    'border-radius': '5px',
+                                    'text-align': 'center',
+                                    'line-height': '50px',
+                                    'font-size': '24px',
+                                    'z-index': '1000'
+                                });
+                                $('<div>Are you sure you want to disconnect the light?</div>').appendTo($container_ask).css({
+                                    'font-size': '20px',
+                                });
+                                $('<button>OK</button>').appendTo($container_ask).click(function () {
+                                    $('.overlay').remove();
+                                    $container_ask.remove();
+                                    container_name.remove();
+
+                                }).addClass('button_delete');
+                                $('<button>CANCEL</button>').appendTo($container_ask).click(function () {
+                                    $('.overlay').remove();
+                                    $container_ask.remove();
+                                }).addClass('button_delete');
+
+                            });
+
+                            dropdown_content.append(rename_option);
+                            dropdown_content.append(delete_option);
+                            dropdown.append(dropdown_content);
+
+                            var icon_menu = $('<img src="/SmartLightProject/images/icon_menu.png" alt="no image" width="10%" height="90%">');
+                            icon_menu.on('click', function (e) {
+                                e.stopPropagation();
+                                dropdown.toggleClass('show');
+                            });
+
+                            container_name.append(icon_menu);
+                            container_name.append(dropdown);
+
+                            $(document).on('click', hideDropdown);
+                            $('.dropdown').on('click', function (e) {
+                                e.stopPropagation();
+                            });
+
+                            $(document).on('click', hideForm);
+                            $('.rename_option').on('click', function (e) {
+                                e.stopPropagation();
+                            });
+
+
                         });
+
 
                         container_model.append(button_addLight);
                         $('#inner-screen').append(container_model);
+
                     }
                 }
             }
-
 
 
         });
