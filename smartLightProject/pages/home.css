@@ -4,6 +4,17 @@
     background-image: linear-gradient(180deg, rgba(247, 248, 167, 0.5899999737739563) 0%, rgba(0, 147, 255, 0.5400000214576721) 98%, rgba(36, 36, 30, 0) 100%);
 }
 
+.menu_container{
+    width: 200px;
+    height: 60px;
+    max-width: 100%;
+    position: fixed;
+    flex-direction: row;
+    background-color: #ffffff4e;
+    left: 31.5%;
+    top: 9%;
+}
+
 .container {
     width: 620px;
     height: 650px;
