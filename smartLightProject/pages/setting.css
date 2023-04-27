@@ -19,15 +19,6 @@
     z-index: 2;
 }
 
-.menu_position {
-    height: 100%;
-    background-color: #007bff00;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1%;
-    margin-bottom: 0px;
-}
 
 .container {
     width: 620px;
