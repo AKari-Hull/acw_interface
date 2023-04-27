@@ -71,3 +71,42 @@
     outline: none;
     box-shadow: 0 0 0 2px #007aff;
 }
+
+.container_small {
+    width: 80%;
+    height: 70%;
+    margin: auto;
+    flex-direction: column;
+    background-color: #d7d7d7;
+    display: flex;
+}
+
+
+.container_setting{
+    width: 80%;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: left;
+    background-color: rgba(225, 13, 13, 0.486);
+	flex-wrap: wrap;
+	flex-direction: column;
+	gap: 2px;
+    padding-left: 2px;
+}
+
+.container_setting div {
+	padding:5px;
+	color: #000000;
+	background: transparent;
+}
+
+
+h1 {
+    text-align: center;
+    font-style: Regular;
+    font-family: Fanwood Text;
+    font-weight: 400;
+    font-size: 30px;
+}
