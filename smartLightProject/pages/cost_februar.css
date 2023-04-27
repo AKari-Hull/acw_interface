@@ -205,6 +205,10 @@
     color: #9b37ff;
 }
 
+.non_display{
+    color: transparent;
+}
+
 
 h1 {
     text-align: center;
