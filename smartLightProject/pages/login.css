@@ -1,24 +1,27 @@
-.background{
+.background {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-image: linear-gradient(180deg, rgba(247, 248, 167, 0.5899999737739563) 0%, rgba(0, 147, 255, 0.5400000214576721) 98%, rgba(36, 36, 30, 0) 100%);
 }
 
-.container{
+.container {
     width: 700px;
     height: 500px;
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     flex-direction: row;
     background-color: #ffffff;
     box-shadow: 5px 5px 10px 0px #d4d4d4;
     border-radius: var(--dl-radius-radius-radius4);
-    display: flex;  
+    display: flex;
+    max-width: 100%;
+    min-height: 400px;
+
 }
 
-.left_side{
+.left_side {
     width: 50%;
     height: 80%;
     margin-top: 5%;
@@ -28,7 +31,7 @@
 
 }
 
-.right_side{
+.right_side {
     width: 50%;
     height: 80%;
     margin-top: 5%;
@@ -36,7 +39,7 @@
     margin-bottom: auto;
     background-image: linear-gradient(180deg, rgba(247, 248, 167, 0.5899999737739563) 0%, rgba(0, 147, 255, 0.5400000214576721) 98%, rgba(36, 36, 30, 0) 100%);
     flex-direction: column;
-    
+
 
 }
 
@@ -49,7 +52,7 @@
 
 
 
-h1{   
+h1 {
     text-align: center;
     font-style: Regular;
     font-family: Fanwood Text;
@@ -57,7 +60,7 @@ h1{
     font-size: 40px;
 }
 
-h2{
+h2 {
     text-align: center;
     font-style: Regular;
     font-family: Fanwood Text;
@@ -65,21 +68,24 @@ h2{
     font-size: 30px;
 }
 
-form{
-    margin-top: 15%; 
+form {
+    margin-top: 15%;
 }
 
-label[for="email"], label[for="password"]{
+label[for="email"],
+label[for="password"] {
     font-size: 30px;
 }
 
-input[type="text"], input[type="email"], input[type="password"] {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
     height: 8%;
     width: 55%;
     font-size: 16px;
 }
 
-button{ 
+button {
     background-color: rgb(170, 203, 245);
     width: 176px;
     height: 35px;
@@ -92,17 +98,29 @@ button{
 
 
 @media only screen and (max-width: 700px) {
-  .container {   
-    left: 75%;
-  }
+    .container {
+        left: 40%;
+        width: 90%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }
+
+@media only screen and (max-height: 400px) {
+    .container {
+        height: 70%;
+        max-height: 200px;
+        margin-top: 10%;
+        
+    }
+}
+
+
 
 @media only screen and (max-width: 700px) {
-    label[for="email"], label[for="password"] {
-    text-align: left;
-  }
+
+    label[for="email"],
+    label[for="password"] {
+        text-align: left;
+    }
 }
-
-
-
-  

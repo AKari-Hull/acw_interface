@@ -5,14 +5,21 @@
 }
 
 .menu_container{
-    width: 200px;
+    width: 620px;
     height: 60px;
     max-width: 100%;
     position: fixed;
     flex-direction: row;
-    background-color: #ffffff4e;
-    left: 31.5%;
-    top: 9%;
+    background-color: #ffffff00;
+    top: 8.5%;
+    left: 50%;
+    transform: translate(-50%, -91.5%);
+}
+
+.menu_position{
+    height: 100%;
+    width: 175px;
+    background-color: #007bff00;
 }
 
 .container {
@@ -234,6 +241,34 @@
     margin-right: 8%;
     margin-bottom: 0%;
 }
+
+.round-button {
+    width: 53px;
+    height: 53px;
+    margin-left: 1%;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    display: inline-block;
+}
+  
+  .button-image {
+    width: 50%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.round-button:focus {
+    outline: none; 
+    box-shadow: 0 0 0 2px #007aff; 
+}
+  
 
 label {
     margin-top: 30%;
