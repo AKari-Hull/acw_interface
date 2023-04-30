@@ -1,15 +1,16 @@
 .background {
     width: 100%;
-    height: calc(100vh - 60px);
+    height: 1000px;
     background-image: linear-gradient(180deg, rgba(247, 248, 167, 0.5899999737739563) 0%, rgba(0, 147, 255, 0.5400000214576721) 98%, rgba(36, 36, 30, 0) 100%);
     padding-top: 60px;
+    overflow: scroll;
 }
 
 .menu_container{
     width: 620px;
     height: 60px;
     max-width: 100%;
-    position: fixed;
+    position: absolute;
     flex-direction: row;
     background-color: #ffffff00;
     top: 0%;
@@ -33,7 +34,7 @@
     max-width: 100%;
     max-height: calc(100vh-100px);
     height: 650px;
-    position: fixed;
+    position: absolute;
     top: 0%;
     left: 50%;
     transform: translate(-50%, -100%);
@@ -311,5 +312,5 @@ button {
     font-family: Fanwood Text;
     font-size: 18px;
     border-width: 1px;
-    border-color: #89c4ff;
+    border-color: #000000;
 }
