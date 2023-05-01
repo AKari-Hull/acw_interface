@@ -104,6 +104,7 @@ button {
         width: 90%;
         margin-left: 10%;
         margin-right: 10%;
+        margin-top: 10%;
     }
 }
 
@@ -112,7 +113,7 @@ button {
         height: 70%;
         max-height: 200px;
         margin-top: 10%;
-        
+
     }
 }
 
@@ -123,5 +124,13 @@ button {
     label[for="email"],
     label[for="password"] {
         text-align: left;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        height: 8%;
+        width: 70%;
+        font-size: 16px;
     }
 }
