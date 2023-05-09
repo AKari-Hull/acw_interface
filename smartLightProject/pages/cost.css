@@ -208,7 +208,10 @@
 .non_display{
     color: transparent;
 }
-
+.button_anotherMonth{
+    cursor : pointer;
+    
+}
 
 h1 {
     text-align: center;
