@@ -206,7 +206,10 @@
     color: #9b37ff;
 }
 
-
+.button_anotherMonth{
+    cursor : pointer;
+    
+}
 h1 {
     text-align: center;
     font-style: Regular;
