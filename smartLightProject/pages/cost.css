@@ -230,8 +230,10 @@ h2{
 
 input[type="number"] {
     background-color: transparent;
-    border: none;
     color: #495057;
     font-size: 18px;
     width: 70px;
+    cursor : pointer;
+    border: double 3px #21f6e8de;
+    opacity: 1;
   }
